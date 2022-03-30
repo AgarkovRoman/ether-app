@@ -45,7 +45,6 @@ type transactionsContextType = {
     sendTransaction: () => Promise<void>;
     transactionStatus: keyof typeof TransactionStatusEnum;
     transactions: any[];
-    resetForm: () => void;
 }
 
 export const TransactionsContext = React.createContext<transactionsContextType>({
@@ -62,7 +61,6 @@ export const TransactionsContext = React.createContext<transactionsContextType>(
     sendTransaction: async () => {},
     transactionStatus: TransactionStatusEnum.success,
     transactions: [],
-    resetForm: () => {},
 });
 
 type TransactionProviderProps = {
@@ -78,11 +76,6 @@ export const TransactionProvider = ({children}: TransactionProviderProps) => {
 
     const handleChange = ({e, name}: HandleChangeType) => {
         setFormData((prevState) => ({...prevState, [name]: e.target.value}))
-    }
-
-    const resetForm = () => {
-        debugger;
-        setFormData(() => ({addressTo: '', amount: '', keyword: '', message: ''}))
     }
 
     const getAllTransactions = async () => {
@@ -194,7 +187,6 @@ export const TransactionProvider = ({children}: TransactionProviderProps) => {
             sendTransaction,
             transactionStatus,
             transactions,
-            resetForm,
         }}>
             {children}
         </TransactionsContext.Provider>

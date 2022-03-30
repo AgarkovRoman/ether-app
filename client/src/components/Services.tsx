@@ -11,7 +11,7 @@ type ServiceCardType = {
 }
 
 const ServiceCard = ({ color, title, icon, subtitle }: ServiceCardType) => (
-    <div className="flex flex-row justify-start items-start white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
+    <div className="flex flex-row justify-start items-center white-glassmorphism p-3 m-2 cursor-pointer hover:shadow-xl">
         <div className={`w-10 h-10 rounded-full flex justify-center items-center ${color}`}>
             {icon}
         </div>
