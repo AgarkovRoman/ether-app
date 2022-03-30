@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-const APIKEY = import.meta.env.VITE_API_GYPHY;
+const APIKEY = import.meta.env.VITE_GIPHY_API;
 
 type useFetchType = {
     keyword: string;
